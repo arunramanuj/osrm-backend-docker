@@ -36,8 +36,9 @@ RUN apt-get -y update \
     python-dev \
     python-setuptools \
  && apt-get clean \
- && easy_install -U pip \
- && pip install -U crcmod \ 
+# && easy_install -U pip \
+ && python -m pip install --upgrade pip
+ && pip install -U crcmod \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/*
 
