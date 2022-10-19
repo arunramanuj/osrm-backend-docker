@@ -35,6 +35,7 @@ RUN apt-get -y update \
     gcc \
     python-dev \
     python-setuptools \
+    wget \
  && apt-get clean \
 # && easy_install -U pip \
 # && python -m pip install --upgrade pip \
