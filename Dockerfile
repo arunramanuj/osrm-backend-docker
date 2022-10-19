@@ -36,8 +36,10 @@ RUN apt-get -y update \
     python-dev \
     python-setuptools \
  && apt-get clean \
- && easy_install -U pip \
+# && easy_install -U pip \
 # && python -m pip install --upgrade pip \
+ && wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
+ && python get-pip.py \
  && pip install -U crcmod \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/*
