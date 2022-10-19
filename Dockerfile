@@ -36,6 +36,7 @@ RUN apt-get -y update \
     python-dev \
     python-setuptools \
     wget \
+    unzip \
  && apt-get clean \
 # && easy_install -U pip \
 # && python -m pip install --upgrade pip \
@@ -44,6 +45,11 @@ RUN apt-get -y update \
  && pip install -U crcmod \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/*
+
+# Install AWS CLI
+RUN wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip \
+ && unzip awscli-exe-linux-x86_64.zip \
+ && ./aws/install
 
 # Build osrm-backend
 RUN mkdir /osrm-src \
